@@ -1,0 +1,26 @@
+\ProvidesPackage{songcommands}
+
+\usepackage{tocloft}
+
+\NewDocumentEnvironment{repeatable}{}{:,:}{:,:}
+
+\NewDocumentCommand{\songheader}{mo}{
+    \textbf{#1}
+    
+    \IfValueTF{#2}{(#2)}{}
+    
+    \medskip
+}
+
+\NewDocumentEnvironment{song}{mmo}{
+\addcontentsline{sng}{subsection}{#2}\songheader{#1. #2}[#3]}{\bigskip}
+
+\NewDocumentEnvironment{songverse}{}{\vfil\penalty-9999\vfilneg\begin{minipage}{0.8\textwidth}}{\end{minipage}\medskip}
+
+\NewDocumentEnvironment{songchorus}{}{\vfil\penalty-9999\vfilneg\hfill\begin{minipage}{\textwidth-1cm}}{\end{minipage}\medskip}
+
+\newcommand{\listsongsname}{Hakemisto}
+\newlistof{song}{sng}{\listsongsname}
+
+
+\endinput

@@ -1,0 +1,61 @@
+\documentclass[8pt,a6paper,twoside]{extarticle}
+
+% Vanilla packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[cm]{fullpage}     
+\usepackage[top=10mm, bottom=10mm, left=0mm, right=10mm, foot=5mm, marginparsep=0mm, headsep=3mm]{geometry}
+\usepackage[]{fancyhdr}
+
+\geometry{bindingoffset=1cm}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+
+% Custom packages
+
+\usepackage{songcommands}
+\usepackage{songlist}
+
+% Page configuration
+
+\pdfpagewidth=\paperwidth
+\pdfpageheight=\paperheight
+
+% Song number counter
+
+\newcounter{ver}
+\setcounter{ver}{1}
+\newcommand{\songnumber}{\thever\stepcounter{ver}}
+
+% Header config
+
+\setlength{\headheight}{12.2pt}
+\pagestyle{fancy}
+
+
+% ------- DOCUMENT PROPER ------- %
+
+\begin{document}
+
+\fancyhf{}
+
+\fancyhead[RE,LO]{\thepage}
+\fancyhead[CE, CO]{\textit{Laulukirja}}
+
+\jarjestoasiantuntija{\songnumber}
+
+\livet{\songnumber}
+
+\jarjestoasiantuntija{\songnumber}
+
+\oolannin{\songnumber}
+\pagebreak
+\intiankuu{\songnumber}
+
+
+\newpage
+\listofsong
+\end{document}
