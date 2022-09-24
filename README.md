@@ -44,6 +44,8 @@ The whole song should be inside the ```song``` environment for which we give the
 
 The lyrics are written inside either ```songverse``` or ```songchorus``` environments that handle the spacing of the text. For repeatable parts there is the ```repeatable``` environment.
 
+When a song is defined, it can be added to ```main.tex``` by calling the "song command", in this example case ```\jarjestoasiantuntija{\songnumber}```. The ```\songnumber``` is counter for the songs. For a custom song number, replace ```\songnumber``` with whatever you want, e.g n.
+
 ## Known issues
 
 - Currently there's an issue with song headers being left dangling alone in the previous page sometimes. Probably best to just add pagebreaks when building the final version.
